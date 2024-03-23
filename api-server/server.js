@@ -1,6 +1,7 @@
 import app from "./app";
 import http from "http";
 import { initializeDB } from "./util/dbConn.js";
+import config from "config";
 
 const server = http.createServer(app);
 
@@ -17,7 +18,8 @@ async function startServer(server, port){
     */
 
     server.listen(port, ()=>{
-        console.log(`Server is running on port ${port}`);
+        const name = config.get("data.postgres.name");
+        console.log(`${name} is running on port ${port}`);
     });
 }
 

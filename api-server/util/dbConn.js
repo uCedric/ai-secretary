@@ -1,8 +1,10 @@
 import pg from 'pg';
 
-class DB {
-   constructor() {
+const host = 
 
+class DB {
+   constructor({ host, port, user, password, name }) {
+        
    }
 }
 
@@ -13,7 +15,7 @@ export default class DatabaseSingleton{
 
     static getInstance({ host, port, user, password, name } = {}){
         if(!DatabaseSingleton.instance){
-            DatabaseSingleton.instance = new DB();
+            DatabaseSingleton.instance = new DB({ host, port, user, password, name });
             console.info("DB connection singleton is created");
         }
 
