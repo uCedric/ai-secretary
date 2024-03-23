@@ -1,12 +1,11 @@
-import app from "./app";
+import app from "./app.js";
 import http from "http";
 import { initializeDB } from "./util/dbConn.js";
-import config from "config";
 
 const server = http.createServer(app);
-
+const port = 3000;
 async function startServer(server, port){
-    initializeDB();
+    //initializeDB();
 
     /*
     To prevent loss the request data or status we need to handle while server is shutting down.
@@ -18,8 +17,8 @@ async function startServer(server, port){
     */
 
     server.listen(port, ()=>{
-        const name = config.get("data.postgres.name");
-        console.log(`${name} is running on port ${port}`);
+        
+        console.log(`server is running on port ${port}`);
     });
 }
 
