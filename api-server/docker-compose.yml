@@ -9,8 +9,8 @@ services:
     command: postgres -c max_connections=1000
     container_name: as-db
     environment:
-            POSTGRES_DB: as-db
+            POSTGRES_DB: as
             POSTGRES_USER: user
             POSTGRES_PASSWORD: password
     ports:
-          - 8000:8000
+          - 5432:5432

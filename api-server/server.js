@@ -1,11 +1,11 @@
 import app from "./app.js";
 import http from "http";
-import { initializeDB } from "./util/dbConn.js";
+import { initializeDB } from "./src/util/dbConn.js";
 
 const server = http.createServer(app);
 const port = 3000;
 async function startServer(server, port){
-    //initializeDB();
+    initializeDB();
 
     /*
     To prevent loss the request data or status we need to handle while server is shutting down.
