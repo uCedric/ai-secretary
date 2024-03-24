@@ -1,6 +1,6 @@
 import app from "./app.js";
 import http from "http";
-import { initializeDB } from "./util/dbConn.js";
+import { initializeDB } from "./src/util/dbConn.js";
 
 const server = http.createServer(app);
 const port = 3000;

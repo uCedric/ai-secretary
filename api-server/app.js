@@ -5,7 +5,7 @@ const app = express();
 app.use(json());
 
 app.get("/health", (req, res) => {
-    console.log("fuck")
+    console.info("alive")
 });
 
 app.all("*", (req) => {
